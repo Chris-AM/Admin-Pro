@@ -10,6 +10,9 @@ import { RouterModule } from '@angular/router';
   declarations: [
     LoginComponent,
     RegisterComponent,
+  ],exports:[
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     CommonModule,
