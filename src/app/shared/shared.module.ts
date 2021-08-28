@@ -1,5 +1,7 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BreadcrumsComponent } from './breadcrums/breadcrums.component';
@@ -20,7 +22,8 @@ import { BreadcrumsComponent } from './breadcrums/breadcrums.component';
     HeaderComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class SharedModule { }
