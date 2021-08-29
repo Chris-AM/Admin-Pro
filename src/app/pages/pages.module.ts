@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ComponentsModule } from '../components/components.module';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromisesComponent } from './promises/promises.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -27,7 +28,8 @@ import { PromisesComponent } from './promises/promises.component';
     ProgressComponent,
     PagesComponent,
     AccountSettingsComponent,
-    PromisesComponent
+    PromisesComponent,
+    RxjsComponent
   ],
   exports: [
     DashboardComponent,
@@ -35,7 +37,8 @@ import { PromisesComponent } from './promises/promises.component';
     ProgressComponent,
     PagesComponent,
     AccountSettingsComponent,
-    PromisesComponent
+    PromisesComponent,
+    RxjsComponent
   ],
   imports: [
     CommonModule,
