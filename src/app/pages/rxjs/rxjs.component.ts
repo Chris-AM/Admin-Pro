@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { interval, Observable } from 'rxjs';
-import { retry,take, map } from 'rxjs/operators';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { interval, Observable, Subscription } from 'rxjs';
+import { retry,take, map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rxjs',
   templateUrl: './rxjs.component.html',
   styles: [],
 })
-export class RxjsComponent implements OnInit {
+export class RxjsComponent implements OnInit, OnDestroy {
+
+  public intervalSubscription: Subscription;
+  
   constructor() {
-   this.returnInterval().subscribe(console.log);
+   this.intervalSubscription =  this.returnInterval().subscribe(console.log);
+  
     ////////////////////////////////////////
     ////////// Manual Observable ///////////
     ////////////////////////////////////////
@@ -25,10 +29,11 @@ export class RxjsComponent implements OnInit {
   ngOnInit(): void {}
 
   returnInterval(): Observable<number> {
-    return interval(1000)
+    return interval(50)
             .pipe(
-              take(4),
-              map(value => value + 1)
+              //take(10),
+              map(value => value + 1),
+              filter(isPair => (isPair%2 === 0) ? true : false)
             );
   }
 
@@ -47,5 +52,9 @@ export class RxjsComponent implements OnInit {
       }, 1000);
     });
    
+  }
+
+  ngOnDestroy(): void {
+    this.intervalSubscription.unsubscribe()
   }
 }
