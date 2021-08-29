@@ -31,7 +31,7 @@ export class RxjsComponent implements OnInit, OnDestroy {
   returnInterval(): Observable<number> {
     return interval(50)
             .pipe(
-              //take(10),
+              take(40),
               map(value => value + 1),
               filter(isPair => (isPair%2 === 0) ? true : false)
             );
