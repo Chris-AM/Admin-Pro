@@ -12,6 +12,7 @@ import { Graphycs1Component } from './graphycs1/graphycs1.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ComponentsModule } from '../components/components.module';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromisesComponent } from './promises/promises.component';
 
 
 
@@ -25,14 +26,16 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     Graphycs1Component,
     ProgressComponent,
     PagesComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    PromisesComponent
   ],
   exports: [
     DashboardComponent,
     Graphycs1Component,
     ProgressComponent,
     PagesComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    PromisesComponent
   ],
   imports: [
     CommonModule,
